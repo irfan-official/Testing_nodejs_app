@@ -1,6 +1,8 @@
 import express from "express";
 import { config } from "dotenv";
-import user from "./users.json" assert { type: "json" };
+import fs from "fs";
+const user = JSON.parse(fs.readFileSync("./users.json", "utf-8"));
+
 config();
 const app = express();
 
